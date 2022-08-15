@@ -2,11 +2,9 @@
 ### Basic Route
 
 ```php
- Route::get('/test', function () {
-    return 'Hello World';
-});
-
-// Hello World
+use App\Http\Controllers\UserController;
+ 
+Route::get('/user', [UserController::class, 'index']);
 ```
 
 
@@ -15,8 +13,14 @@
 ```php
 Route::view('/test', 'test');
  
-Route::view('/test', 'test', ['name' => 'Sahos']);
+Route::view('/test', 'test', ['name' => 'Sahos']);    // With Parameter
 
+```
+
+### Redirect Route
+
+```php
+Route::redirect('/here', '/there');
 ```
 
 ### Route Parameters
@@ -35,6 +39,13 @@ Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
 
 
 
+
+
+If you want to see all route list, then run this code on your terminal.
+
+```sh
+php artisan route:list
+```
 
 
 
