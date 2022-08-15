@@ -35,6 +35,12 @@ Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
     //
 });
 
+
+//Optional Parametrer
+Route::get('/user/{name?}', function ($name = 'John') {
+    return $name;
+});
+
 ```
 
 
