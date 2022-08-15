@@ -19,6 +19,25 @@ Route::view('/test', 'test', ['name' => 'Sahos']);
 
 ```
 
+### Route Parameters
+```php
+//Single Parameter
+Route::get('/user/{id}', function ($id) {
+    return 'User '.$id;
+});
+
+//Multiple Parameter
+Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
+    //
+});
+
+```
+
+
+
+
+
+
 
 ### Basic Controllers
 
