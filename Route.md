@@ -23,6 +23,12 @@ Route::view('/test', 'test', ['name' => 'Sahos']);    // With Parameter
 Route::redirect('/here', '/there');
 ```
 
+### Named Route
+
+```php
+Route::get('/user/profile', [UserProfileController::class, 'show'])->name('profile');
+```
+
 ### Route Parameters
 ```php
 //Single Parameter
