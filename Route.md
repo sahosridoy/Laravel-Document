@@ -49,6 +49,44 @@ Route::get('/user/{name?}', function ($name = 'John') {
 
 ```
 
+# Route Group
+### Middileware 
+```php
+Route::middleware(['first', 'second'])->group(function () { 
+    Route::get('/user/profile', function () {
+        // Uses first & second middleware...
+    });
+});
+
+```
+
+### Controller 
+```php
+use App\Http\Controllers\OrderController;
+ 
+Route::controller(OrderController::class)->group(function () {
+    Route::get('/orders/{id}', 'show');
+    Route::post('/orders', 'store');
+});
+```
+
+### Prefixes 
+```php
+Route::prefix('admin')->group(function () {
+    Route::get('/users', function () {
+        // Matches The "/admin/users" URL
+    });
+});
+```
+
+### Name Prefixes
+```php
+Route::name('admin.')->group(function () {
+    Route::get('/users', function () {
+        // Route assigned name "admin.users"...
+    })->name('users');
+});
+```
 
 
 
